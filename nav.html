@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Navigation Bar</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://kit.fontawesome.com/7deb04d01d.js" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .main{
+            position: fixed;
+            top:5px;
+            right: -310px;
+            width: 300px;
+            height: 700px;
+            background-color: #009879 ;
+            border: 2px solid #008c71;
+            box-shadow: 0px 0px 10px 8px rgba(0,0,0,0.25);
+            transition: right 0.45s ease-in-out, opacity 0.45s ease-in-out;
+            overflow: hidden;
+            z-index: 5;
+        }
+        .active{
+          right: 5px;
+        }
+
+        .fa-angles-right{
+            border: none;
+            font-size: 30px;
+            padding: 6px 6px 6px 20px;
+            cursor: pointer;
+            color: whitesmoke;
+        }
+          
+        .main a{
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            background-color: #008c71;
+            padding: 20px;
+            border-bottom:2px solid #009879;
+            font-weight: bold;
+        }
+         .logoLink{
+          border: 2px solid whitesmoke;
+          border-radius: 50%;
+          padding: 6px;
+          color: whitesmoke;
+          font-size: 20px;
+
+        }
+        .tess{
+            padding: 12px;
+            font-size: 20px;
+            color: whitesmoke;
+        }
+        .log{
+            margin-top: 130px;
+        }
+        .main a:active{
+            background: #007d65;
+        }
+    </style>
+</head>
+<body>
+    <h1>Build nav bar</h1>
+    <input type="button" onclick="clickToFloat()" value="Open/Close Nav">
+    <div class="iconBar" onclick="clickToFloat()"><i class="fa-solid fa-bars"></i></div>
+    <div class="main">
+        <div class="backToNav" onclick="clickToFloat()"><i class="fa-solid fa-angles-right"></i></div>
+        <div>
+            <a href="#"><i class="fa-solid fa-user logoLink"></i><span class="tess">My Profile</span></a>
+            <a href="#"><i class="fa-solid fa-house logoLink"></i><span class="tess">Home</span></a>
+            <a href="#"><i class="fa-solid fa-bell-concierge logoLink"></i><span class="tess">Service</span></a>
+            <a href="#"><i class="fa-brands fa-product-hunt logoLink"></i><span class="tess">Product</span></a>
+            <a href="#"><i class="fa-sharp fa-solid fa-address-book logoLink"></i><span class="tess">Contacts</span></a>
+        </div>
+        <div class="log">
+            <a href="#"><i class="fa-solid fa-right-from-bracket logoLink"></i><span class="tess">LogOut</span></a>
+        </div>
+    </div> 
+
+   <script>
+    function clickToFloat(){
+        document.querySelector(".main").classList.toggle("active");
+    }
+   </script>
+</body>
+</html>
